@@ -16,7 +16,7 @@ To install MatCat in `/opt/MatCat`, first clone the repository:
 
 ```bash
 git clone https://github.com/developledh/MatCat.git 
-'''
+```
 
 ## 📁 Folder Structure & Required Files  
 To use this tool effectively, the following setup is required:  
