@@ -15,7 +15,8 @@ This project aims to **automate material property calculations and modeling base
 To install MatCat in `/opt/MatCat`, first clone the repository:
 
 ```bash
-sudo git clone https://github.com/developledh/MatCat.git /opt/MatCat
+git clone https://github.com/developledh/MatCat.git 
+'''
 
 ## 📁 Folder Structure & Required Files  
 To use this tool effectively, the following setup is required:  
