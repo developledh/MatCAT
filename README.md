@@ -48,11 +48,11 @@ sys.path.append("$Your download path$/MatCat")
 When you run `run_matcat.py` in your choice a folder, the following directory structure will be automatically created:
 
 📂 Create a folder of your choice 
- ├── 📂 cifs/    # Initial structure files   # (Folder containing CIF files for conversion)
- ├── 📂 Si/  # (Example structure folder)
- │    ├── 📂 bin/  # ✅ Copied from MatCat/bin (Executable scripts) for Automatic calculation 
- │    ├── 📂 optimization/ Directory where VASP calculations are performed
- │    ├── POSCAR
+├── 📂 cifs/    # Initial structure files   # (Folder containing CIF files for conversion)
+├── 📂 Si/  # (Example structure folder)
+│    ├── 📂 bin/  # ✅ Copied from MatCat/bin (Executable scripts) for Automatic calculation 
+│    ├── 📂 optimization/ Directory where VASP calculations are performed
+│    ├── POSCAR
  │    ├── INCAR, KPOINTS, pbs.sh # VASP input files and PBS script # POTCAR automatically is generated in pbs.sh
  │
  ├── 📂 SiC/
