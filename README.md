@@ -20,16 +20,15 @@ git clone https://github.com/developledh/MatCat.git
 ## 📁 Folder Structure & Required Files  
 To use this tool effectively, the following setup is required:  
 
-1. **POTCAR Directory Setup** → Ensure that the necessary POTCAR files are available
-## Setting Up VASP POTCAR Directory
-
+Setting Up VASP POTCAR Directory
+1. POTCAR Directory Setup → Ensure that the necessary POTCAR files are available
 To set the POTCAR directory environment variable, add the following line to your shell configuration file (e.g., `.bashrc`, `.bash_profile`, or `.zshrc`):
 
 ```sh
 export POTCAR_DIR="$HOME/PBE"
 source ~/.bashrc  # or source ~/.zshrc
 ```
-2. **Modeling Folder Structure**  
+2. Modeling Folder Structure  
    - Create an the desired model (.cif format) inside cifs folder
    - For automation, Copy a bin of Python code within the module under each model case folder.
    - The bin folder looks like this : 
