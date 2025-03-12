@@ -10,13 +10,12 @@ This project aims to **automate material property calculations and modeling base
 - **Workflow optimization** to handle multi-step calculations automatically
 
 ## Installation Guide
-
-### **1️⃣ Clone the repository**
 To install MatCat in `/opt/MatCat`, first clone the repository:
 
 ```bash
 git clone https://github.com/developledh/MatCat.git 
 ```
+
 
 ## 📁 Folder Structure & Required Files  
 To use this tool effectively, the following setup is required:  
