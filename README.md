@@ -43,8 +43,9 @@ source ~/.bashrc  # or source ~/.zshrc
 ```sh
 cp -r /your_path/MatCat/Example/run_matcat.py /your_usage_path
 ```
-- And then, In run_matcat.py you have to modify your download path 
-'''sh
+- And then, In run_matcat.py you have to modify your download path
+
+```sh
 import sys
 sys.path.append("$Your download path$/MatCat")
 ```
