@@ -44,8 +44,11 @@ source ~/.bashrc  # or source ~/.zshrc
 import sys
 sys.path.append("$Your download path$/MatCat")
 ```
+
 Example folders structure 
 When you run `run_matcat.py` in your choice a folder, the following directory structure will be automatically created:
+
+```sh
 📂 Your_Chosen_Folder/ # The main folder where you execute run_matcat.py
 ├── 📂 cifs/ # Initial structure files (Folder containing CIF files for conversion)
 │
@@ -61,19 +64,7 @@ When you run `run_matcat.py` in your choice a folder, the following directory st
 │ ├── 📂 optimization/
 │ │ ├── POSCAR
 │ │ ├── INCAR, KPOINTS, pbs.sh # Generated VASP input files for optimization
-
-
-📂 Your_Chosen_Folder/ # The main folder where you execute run_matcat.py 
-├── 📂 cifs/ # Initial structure files (Folder containing CIF files for conversion)
-│ ├── 📂 Si/ # Example structure folder
-│ ├── 📂 bin/ # ✅ Copied from MatCat/bin (Executable scripts for automatic calculation) 
-│ ├── 📂 optimization/ # Directory where VASP calculations are performed │
-│ ├── POSCAR # Structure file converted from CIF │
-│ ├── INCAR, KPOINTS, pbs.sh # VASP input files and PBS script
-│ ├── POTCAR # Automatically generated in pbs.sh
-
-│ ├── 📂 SiC/ # Another example structure folder 
-│├── 📂 bin/ # ✅ Copied from MatCat/bin │├── 📂 optimization/ │ │ ├── POSCAR │ │ ├── INCAR, KPOINTS, pbs.sh # Generated VASP input files for optimization
+```
 
 ## 🛠️ How It Works  
 - After **structure optimization**, multiple follow-up calculations are required.  
