@@ -41,6 +41,7 @@ source ~/.bashrc  # or source ~/.zshrc
    - You will need to specify the download path within Run_matcat.py
      
 ```sh
+cp -r /your_path/MatCat/Example/run_matcat.py /your_usage_path 
 import sys
 sys.path.append("$Your download path$/MatCat")
 ```
