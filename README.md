@@ -45,7 +45,7 @@ import sys
 sys.path.append("$Your download path$/MatCat")
 ```
 
-Example folders structure 
+**Example folders structure**
 When you run `run_matcat.py` in your choice a folder, the following directory structure will be automatically created:
 
 ```sh
