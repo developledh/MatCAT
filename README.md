@@ -46,7 +46,7 @@ sys.path.append("$Your download path$/MatCat")
 ```
 
 **Example folders structure**
-When you run `run_matcat.py` in your choice a folder, the following directory structure will be automatically created:
+- When you run `run_matcat.py` in your choice a folder, the following directory structure will be automatically created:
 
 ```sh
 📂 Your_Chosen_Folder/ # The main folder where you execute run_matcat.py
@@ -64,6 +64,7 @@ When you run `run_matcat.py` in your choice a folder, the following directory st
 │ ├── 📂 optimization/
 │ │ ├── POSCAR
 │ │ ├── INCAR, KPOINTS, pbs.sh # Generated VASP input files for optimization
+│ │ ├── POTCAR # Automatically generated in pbs.sh
 ```
 
 ## 🛠️ How It Works  
