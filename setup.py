@@ -5,7 +5,7 @@ setup(
     version="1.0",
     packages=find_packages(),
     install_requires=[],
-    author="Dong Ho Lee",
+    author="developledh",
     author_email="dongho0724@naver.com",
     description="MatCat: A module for automating VASP calculations",
     long_description=open("README.md").read(),
