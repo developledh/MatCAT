@@ -21,6 +21,8 @@ To set the POTCAR directory environment variable, add the following line to your
 export POTCAR_DIR="$HOME/PBE"
 source ~/.bashrc  # or source ~/.zshrc
 
+이렇게 하면 `README.md`에서 깔끔하게 코드 블록이 표시됩니다.
+
 3. **Modeling Folder Structure**  
    - Create an `optimization/` folder inside the desired model directory  
    - Include the following Python scripts for automation:  
