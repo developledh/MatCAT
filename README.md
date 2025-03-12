@@ -7,7 +7,15 @@ This project aims to **automate material property calculations and modeling base
 ## 🚀 Key Features  
 - **Automation of VASP calculations and modeling**  
 - **Linux scripting and Python integration** for seamless execution  
-- **Workflow optimization** to handle multi-step calculations automatically  
+- **Workflow optimization** to handle multi-step calculations automatically
+
+## 🚀 Installation Guide
+
+### **1️⃣ Clone the repository**
+To install MatCat in `/opt/MatCat`, first clone the repository:
+
+```bash
+sudo git clone https://github.com/developledh/MatCat.git /opt/MatCat
 
 ## 📁 Folder Structure & Required Files  
 To use this tool effectively, the following setup is required:  
@@ -21,14 +29,20 @@ To set the POTCAR directory environment variable, add the following line to your
 export POTCAR_DIR="$HOME/PBE"
 source ~/.bashrc  # or source ~/.zshrc
 ```
-
-
-3. **Modeling Folder Structure**  
-   - Create an `optimization/` folder inside the desired model directory  
-   - Include the following Python scripts for automation:  
+2. **Modeling Folder Structure**  
+   - Create an the desired model (.cif format) inside cifs folder
+   - For automation, Copy a bin of Python code within the module under each model case folder.
+   - The bin folder looks like this : 
      - `optimization_to_CHG.py` → Converts optimized structure to CHGCAR  
      - `CHGCAR_to_dos.py` → Automates Density of States (DOS) calculations  
-     - `CHGCAR_to_band.py` → Automates Band Structure calculations  
+     - `CHGCAR_to_band.py` → Automates Band Structure calculations
+      
+3. Run run_matcat.py
+   - Utilizing MatCat class to perform automated calculations
+```sh
+import sys
+sys.path.append("$Your download path$/MatCat")
+```
 
 ## 🛠️ How It Works  
 - After **structure optimization**, multiple follow-up calculations are required.  
@@ -38,14 +52,15 @@ source ~/.bashrc  # or source ~/.zshrc
 ## 📝 Usage Instructions  
 1. **Set up the required directory and files** as mentioned in the structure above.  
 2. **Ensure Python and VASP are properly installed** on your system.  
-3. **Run the scripts in sequence** to perform automated calculations.  
+3. **Run the scripts will perform automated calculations in sequence (Optimization -> Making_CHGCAR -> dos -> band)**  
 4. **Monitor and analyze results** from the generated output files.  
 
 ## 📌 Future Enhancements  
 - Expanding support for additional VASP calculations
-- Improving automatic modeling for metal-halide 
-- Improving error handling and logging  
-- Enhancing parallel computation capabilities  
+- Improving automatic modeling mainly for metal-halide
+- Improving automatic modeling mainly for interface 
+- Improving error handling and logging
+- Improvement of output data collection
 
 ## 👥 Authors & Contributors  
 This tool was developed by the **Advanced Nano Materials Design Laboratory**.  
