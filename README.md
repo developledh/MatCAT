@@ -12,8 +12,16 @@ This project aims to **automate material property calculations and modeling base
 ## 📁 Folder Structure & Required Files  
 To use this tool effectively, the following setup is required:  
 
-1. **POTCAR Directory Setup** → Ensure that the necessary POTCAR files are available  
-2. **Modeling Folder Structure**  
+1. **POTCAR Directory Setup** → Ensure that the necessary POTCAR files are available
+## Setting Up VASP POTCAR Directory
+
+To set the POTCAR directory environment variable, add the following line to your shell configuration file (e.g., `.bashrc`, `.bash_profile`, or `.zshrc`):
+
+```sh
+export POTCAR_DIR="$HOME/PBE"
+source ~/.bashrc  # or source ~/.zshrc
+
+3. **Modeling Folder Structure**  
    - Create an `optimization/` folder inside the desired model directory  
    - Include the following Python scripts for automation:  
      - `optimization_to_CHG.py` → Converts optimized structure to CHGCAR  
