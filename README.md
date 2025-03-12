@@ -1,4 +1,4 @@
-# Materials Calculation and Automation Tool (VASP)
+# MaTCAT (Materials Calculation and Automation Tool) 
 
 ## 📌 Overview
 **Materials Calculation and Automation Tool (VASP)** is a computational tool developed by the **Innovative Nanomaterials Design Lab**.  
