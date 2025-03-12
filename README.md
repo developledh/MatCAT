@@ -9,7 +9,7 @@ This project aims to **automate material property calculations and modeling base
 - **Linux scripting and Python integration** for seamless execution  
 - **Workflow optimization** to handle multi-step calculations automatically
 
-## 🚀 Installation Guide
+## Installation Guide
 
 ### **1️⃣ Clone the repository**
 To install MatCat in `/opt/MatCat`, first clone the repository:
