@@ -38,6 +38,8 @@ source ~/.bashrc  # or source ~/.zshrc
       
 3. Run run_matcat.py
    - Utilizing MatCat class to perform automated calculations
+   - You will need to specify the download path within Run_matcat.py
+     
 ```sh
 import sys
 sys.path.append("$Your download path$/MatCat")
