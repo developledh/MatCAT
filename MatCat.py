@@ -141,8 +141,6 @@ gamma
                     return
         print("POTCAR file successfully created.")
 
-      print("POTCAR file successfully created.")
-
     @staticmethod
     def convert_cif_to_poscar(cif_folder="./cifs", output_folder="."):
         cif_files = glob.glob(os.path.join(cif_folder, "*.cif"))
