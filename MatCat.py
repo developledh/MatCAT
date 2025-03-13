@@ -91,7 +91,7 @@ conda activate DFT
 # Next caculation 
 cd ..
 cd bin
-time python optimization_to_band.py
+time python optimization_to_CHG.py
 ''')
 
     @staticmethod
