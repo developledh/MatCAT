@@ -1,5 +1,6 @@
 import os
 import shutil
+import sys
 
 def modify_incar_for_making_chgcar(file_path):
     with open(file_path, "r") as f:
@@ -24,12 +25,9 @@ def modify_incar_for_making_chgcar(file_path):
             lines.append(f"{keyword} = {value}\n")
 
     add_or_modify_line(updated_lines, "NSW", 0)
-    add_or_modify_line(updated_lines, "ICHARG", 0)
+    add_or_modify_line(updated_lines, "ICHARG", 2)
     add_or_modify_line(updated_lines, "LCHARG", ".TRUE.")
     add_or_modify_line(updated_lines, "LORBIT", 11)
-    add_or_modify_line(updated_lines, "LVTOT", ".TRUE.")
-    add_or_modify_line(updated_lines, "LVHAR", ".TRUE.")
-    add_or_modify_line(updated_lines, "LWAVE", ".TRUE.")
 
     with open(file_path, "w") as f:
         f.writelines(updated_lines)
@@ -72,6 +70,17 @@ def copy_and_modify_optimization():
     shutil.copy("optimization/pbs.sh", "making_CHGCAR/")
 
     modify_incar_for_making_chgcar("making_CHGCAR/INCAR")
+    
+def is_optimization_converged():
+    out_path = os.path.join("optimization", "vasp-.out")
+    if not os.path.exists(out_path):
+        print("vasp-.out not found. Aborting.")
+        return False
+    with open(out_path, "r") as f:
+        content = f.read()
+    keyword = "reached required accuracy - stopping structural energy minimisation"
+    return keyword in content
+
 
 def submit_qsub_in_making_chgcar(directory):
     os.chdir(directory)
@@ -91,6 +100,8 @@ def submit_qsub_in_making_chgcar(directory):
 
 # Call the function
 os.chdir("..")
-copy_and_modify_optimization()
-submit_qsub_in_making_chgcar("making_CHGCAR")
-
+if is_optimization_converged():
+    copy_and_modify_optimization()
+    submit_qsub_in_making_chgcar("making_CHGCAR")
+else:
+    sys.exit("Optimization not converged. Skipping making_CHGCAR step.")
