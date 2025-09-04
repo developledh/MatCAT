@@ -1,5 +1,6 @@
 import os
 import shutil
+import sys
 
 def modify_incar_for_DOS(file_path):
     with open(file_path, "r") as f:
@@ -35,11 +36,14 @@ def modify_incar_for_DOS(file_path):
         f.writelines(updated_lines)
 
 def copy_and_modify_making_CHGCAR():
+    chgcar_path = os.path.join("making_CHGCAR", "CHGCAR")
+    if not os.path.exists(chgcar_path):
+        print("CHGCAR not found. Aborting.")
+        return False
+        
     # Create the dos directory if it doesn't exist
     os.makedirs("dos", exist_ok=True)
 
-   
-   
     # Copy files to dos 
     os.system("cp -r ./making_CHGCAR/{INCAR,POTCAR,POSCAR,KPOINTS,CHGCAR,pbs.sh} ./dos/")
    
@@ -71,5 +75,7 @@ def submit_qsub_in_dos(directory):
 
 # Call the function
 os.chdir("..")
-copy_and_modify_making_CHGCAR()
-submit_qsub_in_dos("dos")
+if copy_and_modify_making_CHGCAR():
+    submit_qsub_in_dos("dos")
+else:
+    sys.exit("DOS step skipped due to missing CHGCAR.")
