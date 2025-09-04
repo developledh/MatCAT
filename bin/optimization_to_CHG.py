@@ -1,5 +1,6 @@
 import os
 import shutil
+import sys
 
 def modify_incar_for_making_chgcar(file_path):
     with open(file_path, "r") as f:
@@ -104,4 +105,3 @@ if is_optimization_converged():
     submit_qsub_in_making_chgcar("making_CHGCAR")
 else:
     sys.exit("Optimization not converged. Skipping making_CHGCAR step.")
-
