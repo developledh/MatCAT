@@ -1,5 +1,6 @@
 import os
 import shutil
+import sys
 
 def modify_incar_for_making_chgcar(file_path):
     with open(file_path, "r") as f:
@@ -73,6 +74,16 @@ def copy_and_modify_optimization():
 
     modify_incar_for_making_chgcar("making_CHGCAR/INCAR")
 
+def is_optimization_converged():
+    out_path = os.path.join("optimization", "vasp-.out")
+    if not os.path.exists(out_path):
+        print("vasp-.out not found. Aborting.")
+        return False
+    with open(out_path, "r") as f:
+        content = f.read()
+    keyword = "reached required accuracy - stopping structural energy minimisation"
+    return keyword in content
+
 def submit_qsub_in_making_chgcar(directory):
     os.chdir(directory)
     old_content = "time python optimization_to_CHG.py"
@@ -91,6 +102,9 @@ def submit_qsub_in_making_chgcar(directory):
 
 # Call the function
 os.chdir("..")
-copy_and_modify_optimization()
-submit_qsub_in_making_chgcar("making_CHGCAR")
+if is_optimization_converged():
+    copy_and_modify_optimization()
+    submit_qsub_in_making_chgcar("making_CHGCAR")
+else:
+    sys.exit("Optimization not converged. Skipping making_CHGCAR step.")
 
