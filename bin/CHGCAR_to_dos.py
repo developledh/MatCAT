@@ -75,7 +75,5 @@ def submit_qsub_in_dos(directory):
 
 # Call the function
 os.chdir("..")
-if copy_and_modify_making_CHGCAR():
-    submit_qsub_in_dos("dos")
-else:
-    sys.exit("DOS step skipped due to missing CHGCAR.")
+copy_and_modify_making_CHGCAR()
+submit_qsub_in_dos("dos")
